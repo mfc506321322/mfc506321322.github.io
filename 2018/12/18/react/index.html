@@ -147,16 +147,18 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h2 id="react经典面试题"><a href="#react经典面试题" class="headerlink" title="react经典面试题"></a>react经典面试题</h2><h4 id="1-什么是MVVM？"><a href="#1-什么是MVVM？" class="headerlink" title="1. 什么是MVVM？"></a>1. 什么是MVVM？</h4><blockquote>
-<h5 id="什么是MVVM"><a href="#什么是MVVM" class="headerlink" title="什么是MVVM"></a>什么是MVVM</h5><p>MVVM是MVC的增强版，实质上和MVC没有本质区别，只是代码的位置变动而已</p>
+    <section class="markdown-content"><h2 id="react经典面试题"><a href="#react经典面试题" class="headerlink" title="react经典面试题"></a>react经典面试题</h2><h4 id="1-什么是MVVM？"><a href="#1-什么是MVVM？" class="headerlink" title="1. 什么是MVVM？"></a>1. 什么是MVVM？</h4><h5 id="什么是MVVM"><a href="#什么是MVVM" class="headerlink" title="什么是MVVM"></a>什么是MVVM</h5><blockquote>
+<p>MVVM是MVC的增强版，实质上和MVC没有本质区别，只是代码的位置变动而已</p>
 </blockquote>
-<p><strong>首先先来说一下什么是MVC：</strong><br>MVC，Model、View、Controller，分别表示数据、视图、控制器，所谓MVC便是这几个单词的简写，那么它们之间是怎么工作的呢？先看下图。<br><img src="https://upload-images.jianshu.io/upload_images/2002187-4d82bf5244e9d66e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/716/format/webp" alt="MVC"><br>上图简单描述了三者的作用</p>
+<p><strong>首先先来说一下什么是MVC：</strong></p>
+<p>MVC，Model、View、Controller，分别表示数据、视图、控制器，所谓MVC便是这几个单词的简写，那么它们之间是怎么工作的呢？先看下图。<br><img src="https://upload-images.jianshu.io/upload_images/2002187-4d82bf5244e9d66e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/716/format/webp" alt="MVC"><br>上图简单描述了三者的作用</p>
 <ul>
 <li>Model：数据模型，用来存储数据</li>
 <li>View：视图界面，用来展示UI界面和响应用户交互</li>
 <li>Controller：控制器(大管家角色)，监听模型数据的改变和控制视图行为、处理用户交互</li>
 </ul>
-<p><strong>那么什么是MVVM呢？</strong><br><img src="https://upload-images.jianshu.io/upload_images/2002187-ddcaae06ec00dadb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/673/format/webp" alt="MVVM"></p>
+<p><strong>那么什么是MVVM呢？</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2002187-ddcaae06ec00dadb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/673/format/webp" alt="MVVM"></p>
 <ul>
 <li><p>MVVM是Model-View-ViewModel的缩写。mvvm是一种设计思想。Model 层代表数据模型，也可以在Model中定义数据修改和操作的业务逻辑；View 代表UI 组件，它负责将数据模型转化成UI 展现出来，ViewModel 是一个同步View 和 Model的对象。</p>
 </li>
@@ -237,13 +239,13 @@
 <li>所以当事件触发的时候，对使用统一的分发函数dispatchEvent将指定函数执行。</li>
 </ul>
 <blockquote>
-<h5 id="改变this指向的三种方式及之间的区别"><a href="#改变this指向的三种方式及之间的区别" class="headerlink" title="改变this指向的三种方式及之间的区别"></a>改变this指向的三种方式及之间的区别</h5><ol>
+<h5 id="改变this指向的三种方式及之间的区别"><a href="#改变this指向的三种方式及之间的区别" class="headerlink" title="改变this指向的三种方式及之间的区别"></a>改变this指向的三种方式及之间的区别</h5></blockquote>
+<ol>
 <li>call() 方法<br>语法：<br><code>call(thisObj, arg1, arg2, argN);</code><br>改变this指向后会自动执行，第一个参数为要指向的目标，后面的参数为要传递的数据</li>
 <li>apply() 方法<br>语法：<br><code>apply(thisObj, [arg1, arg2, argN]);</code><br>改变this指向后会自动执行，第一个参数为要指向的目标，后面的参数为要传递的数据，格式为数组形式</li>
 <li>bind() 方法<br>语法：<br><code>bind(thisObj, arg1, arg2, argN);</code><br>改变this指向后不会自动执行，第一个参数为要指向的目标，后面的参数为要传递的数据。</li>
 <li>箭头函数<br>语法：<br><code>let XXX = () =&gt; {};</code><br>箭头函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。this指向的固定化，并不是因为箭头函数内部有绑定this的机制，实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也就不能用作构造函数。</li>
 </ol>
-</blockquote>
 <p>由于箭头函数是匿名函数，在页面刷新时会重新生成函数名，会造成页面不必要的渲染，所以在react中，改变this指向尽量使用bind方法。</p>
 <hr>
 <h4 id="6-样式绑定与CSS-Modules"><a href="#6-样式绑定与CSS-Modules" class="headerlink" title="6. 样式绑定与CSS Modules"></a>6. 样式绑定与CSS Modules</h4><blockquote>
@@ -257,7 +259,8 @@
 <p>使用CSS Modules之后，引用css需要使用import引入css文件并设置一个变量名，调用样式的格式变为<code>className={styles.box}</code></p>
 <hr>
 <h4 id="7-多种组件创建方式及其区别？"><a href="#7-多种组件创建方式及其区别？" class="headerlink" title="7. 多种组件创建方式及其区别？"></a>7. 多种组件创建方式及其区别？</h4><ol>
-<li><strong>es5方法 React.createClass</strong><br>与无状态组件相比，React.createClass和后面要描述的React.Component都是创建有状态的组件，这些组件是要被实例化的，并且可以访问组件的生命周期方法。但是随着React的发展，React.createClass形式自身的问题暴露出来：<ul>
+<li><p><strong>es5方法 React.createClass</strong><br>与无状态组件相比，React.createClass和后面要描述的React.Component都是创建有状态的组件，这些组件是要被实例化的，并且可以访问组件的生命周期方法。但是随着React的发展，React.createClass形式自身的问题暴露出来：</p>
+<ul>
 <li>React.createClass会自绑定函数方法（不像React.Component只绑定需要关心的函数）导致不必要的性能开销，增加代码过时的可能性。</li>
 <li>React.createClass的mixins不够自然、直观；React.Component形式非常适合高阶组件（Higher Order Components–HOC）,它以更直观的形式展示了比mixins更强大的功能，并且HOC是纯净的JavaScript，不用担心他们会被废弃。HOC可以参考无状态组件(Stateless Component) 与高阶组件。</li>
 </ul>
@@ -269,367 +272,138 @@
 <p>在大部分React代码中，大多数组件被写成无状态的组件，通过简单组合可以构建成其他的组件等；这种通过多个简单然后合并成一个大应用的设计模式被提倡。</p>
 </blockquote>
 <p> 无状态函数式组件形式上表现为一个只带有一个render方法的组件类，通过函数形式或者ES6 arrow function的形式在创建，并且该组件是无state状态的。具体的创建形式如下：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    function HelloComponent(props, /* context */) &#123;</span><br><span class="line">        return &lt;div&gt;Hello &#123;props.name&#125;&lt;/div&gt;</span><br><span class="line">    &#125;</span><br><span class="line">    ReactDOM.render(&lt;HelloComponent name=&quot;Sebastian&quot; /&gt;, mountNode)</span><br><span class="line">    ``` </span><br><span class="line">    无状态组件的创建形式使代码的可读性更好，并且减少了大量冗余的代码，精简至只有一个render方法，大大的增强了编写一个组件的便利，除此之外无状态组件还有以下几个显著的特点：</span><br><span class="line">    - **组件不会被实例化，整体渲染性能得到提升**</span><br><span class="line">    因为组件被精简成一个render方法的函数来实现的，由于是无状态组件，所以无状态组件就不会在有组件实例化的过程，无实例化过程也就不需要分配多余的内存，从而性能得到一定的提升。</span><br><span class="line">    - **组件不能访问this对象**</span><br><span class="line">    无状态组件由于没有实例化过程，所以无法访问组件this中的对象，例如：this.ref、this.state等均不能访问。若想访问就不能使用这种形式来创建组件</span><br><span class="line">    - **组件无法访问生命周期的方法**</span><br><span class="line">    因为无状态组件是不需要组件生命周期管理和状态管理，所以底层实现这种形式的组件时是不会实现组件的生命周期方法。所以无状态组件是不能参与组件的各个生命周期管理的。</span><br><span class="line">    - **无状态组件只能访问输入的props，同样的props会得到同样的渲染结果，不会有副作用**</span><br><span class="line"></span><br><span class="line">    无状态组件被鼓励在大型项目中尽可能以简单的写法来分割原本庞大的组件，未来React也会这种面向无状态组件在譬如无意义的检查和内存分配领域进行一系列优化，所以只要有可能，尽量使用无状态组件。</span><br><span class="line">---</span><br><span class="line">#### 8. 什么是受控组件？</span><br><span class="line">假设我们现在有一个表单，表单中有一个input标签，input的value值必须是我们设置在constructor构造函数的state中的值，然后，通过onChange触发事件来改变state中保存的value值，这样形成一个循环的回路影响。也可以说是React负责渲染表单的组件仍然控制用户后续输入时所发生的变化。</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function HelloComponent(props, context) &#123;</span><br><span class="line">    return &lt;div&gt;Hello &#123;props.name&#125;&lt;/div&gt;</span><br><span class="line">&#125;</span><br><span class="line">ReactDOM.render(&lt;HelloComponent name=&quot;Sebastian&quot; /&gt;, mountNode)</span><br></pre></td></tr></table></figure>
+<p> 无状态组件的创建形式使代码的可读性更好，并且减少了大量冗余的代码，精简至只有一个render方法，大大的增强了编写一个组件的便利，除此之外无状态组件还有以下几个显著的特点：</p>
+<ul>
+<li><strong>组件不会被实例化，整体渲染性能得到提升</strong><br>因为组件被精简成一个render方法的函数来实现的，由于是无状态组件，所以无状态组件就不会在有组件实例化的过程，无实例化过程也就不需要分配多余的内存，从而性能得到一定的提升。</li>
+<li><strong>组件不能访问this对象</strong><br>无状态组件由于没有实例化过程，所以无法访问组件this中的对象，例如：this.ref、this.state等均不能访问。若想访问就不能使用这种形式来创建组件</li>
+<li><strong>组件无法访问生命周期的方法</strong><br>因为无状态组件是不需要组件生命周期管理和状态管理，所以底层实现这种形式的组件时是不会实现组件的生命周期方法。所以无状态组件是不能参与组件的各个生命周期管理的。</li>
+<li><p><strong>无状态组件只能访问输入的props，同样的props会得到同样的渲染结果，不会有副作用</strong></p>
+<p>无状态组件被鼓励在大型项目中尽可能以简单的写法来分割原本庞大的组件，未来React也会这种面向无状态组件在譬如无意义的检查和内存分配领域进行一系列优化，所以只要有可能，尽量使用无状态组件。</p>
+</li>
+</ul>
 </li>
 </ol>
-<p>class Demo1 extends Component {<br>    constructor(props) {<br>        super(props);<br>        this.state = {<br>            value: props.value<br>        }<br>    }</p>
-<pre><code>handleChange(e) {
-    this.setState({
-        value: e.target.value
-    })
-}
-
-render() {
-    return (
-        &lt;input value={this.state.value} onChange={e =&gt; this.handleChange(e)}/&gt;
-    )
-}
-</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">#### 9. 高阶组件与装饰器</span><br><span class="line">&gt;我们都知道高阶函数是什么，高阶组件其实是差不多的用法，只不过传入的参数变成了react组件，并返回一个新的组件。</span><br><span class="line"></span><br><span class="line">高阶组件是react应用中很重要的一部分，最大的特点就是重用组件逻辑。它并不是由React API定义出来的功能，而是由React的组合特性衍生出来的一种设计模式。如果你用过redux，那你就一定接触过高阶组件，因为react-redux中的connect就是一个高阶组件。</span><br><span class="line"></span><br><span class="line">先来一个最简单的高阶组件：</span><br></pre></td></tr></table></figure></p>
-<p>import React, { Component } from ‘react’;<br>import simpleHoc from ‘./simple-hoc’;</p>
-<p>class Usual extends Component {<br>  render() {<br>    console.log(this.props, ‘props’);<br>    return (<br>      <div><br>        Usual<br>      </div><br>    )<br>  }<br>}<br>export default simpleHoc(Usual);<br>import React, { Component } from ‘react’;</p>
-<p>const simpleHoc = WrappedComponent =&gt; {<br>  console.log(‘simpleHoc’);<br>  return class extends Component {<br>    render() {<br>      return &lt;WrappedComponent {<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">export default simpleHoc;</span><br></pre></td></tr></table></figure></p>
-<p>组件Usual通过simpleHoc的包装，打了一个log<figure class="highlight plain"><figcaption><span>Usual，并返回一个组件class。 其实我们可以看到，在这个函数里，我们可以做很多操作。 而且return的组件同样有自己的生命周期，function，另外，我们看到也可以把props传给WrappedComponent(被包装的组件)</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**装饰器**</span><br><span class="line">高阶组件可以看做是装饰器模式(Decorator Pattern)在React的实现。即允许向一个现有的对象添加新的功能，同时又不改变其结构，属于包装模式(Wrapper Pattern)的一种</span><br><span class="line"></span><br><span class="line">ES7中添加了一个decorator的属性，使用@符表示，可以更精简的书写。那上面的例子就可以改成：</span><br></pre></td></tr></table></figure></p>
-<p>import React, { Component } from ‘react’;<br>import simpleHoc from ‘./simple-hoc’;</p>
-<p>@simpleHoc<br>export default class Usual extends Component {<br>  render() {<br>    return (<br>      <div><br>        Usual<br>      </div><br>    )<br>  }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">是同样的效果。</span><br><span class="line">当然兼容性是存在问题的，通常都是通过babel去编译的。 babel提供了plugin，高阶组件用的是类装饰器，所以用transform-decorators-legacy babel</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">#### 10. 组件通信的多种方式及其之间的区别</span><br><span class="line">在使用 React 的过程中，不可避免的需要组件间进行消息传递（通信），组件间通信大体有下面几种情况：</span><br><span class="line">1. **父组件向子组件通信**</span><br><span class="line">这是最简单也是最常用的一种通信方式：父组件通过向子组件传递 props，子组件得到 props 后进行相应的处理。</span><br><span class="line">    **父组件 App.js：**</span><br></pre></td></tr></table></figure></p>
-<pre><code>import React,{ Component } from &quot;react&quot;;
-import Sub from &quot;./SubComponent.js&quot;;
-import &quot;./App.css&quot;;
-
-export default class App extends Component{
-
-    render(){
-        return(
-            &lt;div&gt;
-                &lt;Sub title = &quot;今年过节不收礼&quot; /&gt;
-            &lt;/div&gt;
-        )
-    }
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**子组件 SubComponent.js：**</span><br></pre></td></tr></table></figure>
-
-import React from &quot;react&quot;;
-
-const Sub = (props) =&gt; {
-    return(
-        &lt;h1&gt;
-            { props.title }
-        &lt;/h1&gt;
-    )
-}
-
-export default Sub;
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. **子组件向父组件通信**</span><br><span class="line">利用回调函数，可以实现子组件向父组件通信：父组件将一个函数作为 props 传递给子组件，子组件调用该回调函数，便可以向父组件通信。</span><br><span class="line">    **SubComponent.js：**</span><br></pre></td></tr></table></figure>
-
-import React from &quot;react&quot;;
-
-const Sub = (props) =&gt; {
-    const cb = (msg) =&gt; {
-        return () =&gt; {
-            props.callback(msg)
-        }
-    }
-    return(
-        &lt;div&gt;
-            &lt;button onClick = { cb(&quot;我们通信把&quot;) }&gt;点击我&lt;/button&gt;
-        &lt;/div&gt;
-    )
-}
-
-export default Sub;
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**App.js：**</span><br></pre></td></tr></table></figure>
-
-import React,{ Component } from &quot;react&quot;;
-import Sub from &quot;./SubComponent.js&quot;;
-import &quot;./App.css&quot;;
-
-export default class App extends Component{
-    callback(msg){
-        console.log(msg);
-    }
-    render(){
-        return(
-            &lt;div&gt;
-                &lt;Sub callback = { this.callback.bind(this) } /&gt;
-            &lt;/div&gt;
-        )
-    }
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1. **跨级组件之间通信**</span><br><span class="line">所谓跨级组件通信，就是父组件向子组件的子组件通信，向更深层的子组件通信。跨级组件通信可以采用下面两种方式：</span><br><span class="line">    - 中间组件层层传递 props</span><br><span class="line">    - 使用 context 对象</span><br><span class="line"></span><br><span class="line">    对于第一种方式，如果父组件结构较深，那么中间的每一层组件都要去传递 props，增加了复杂度，并且这些  props 并不是这些中间组件自己所需要的。不过这种方式也是可行的，当组件层次在三层以内可以采用这种方式，当组件嵌套过深时，采用这种方式就需要斟酌了。</span><br><span class="line"></span><br><span class="line">    使用 context 是另一种可行的方式，context 相当于一个全局变量，是一个大容器，我们可以把要通信的内容放在这个容器中，这样一来，不管嵌套有多深，都可以随意取用。</span><br><span class="line"></span><br><span class="line">    使用 context 也很简单，需要满足两个条件：</span><br><span class="line">    - 上级组件要声明自己支持 context，并提供一个函数来返回相应的context 对象</span><br><span class="line">    - 子组件要声明自己需要使用 context</span><br><span class="line"></span><br><span class="line">    下面以代码说明，我们新建 3 个文件：父组件 App.js，子组件 Sub.js，子组件的子组件 SubSub.js。</span><br><span class="line">    **App.js：**</span><br></pre></td></tr></table></figure>
-
-import React, { Component } from &apos;react&apos;;
-import PropTypes from &quot;prop-types&quot;;
-import Sub from &quot;./Sub&quot;;
-import &quot;./App.css&quot;;
-
-export default class App extends Component{
-    // 父组件声明自己支持 context
-    static childContextTypes = {
-        color:PropTypes.string,
-        callback:PropTypes.func,
-    }
-
-    // 父组件提供一个函数，用来返回相应的 context 对象
-    getChildContext(){
-        return{
-            color:&quot;red&quot;,
-            callback:this.callback.bind(this)
-        }
-    }
-
-    callback(msg){
-        console.log(msg)
-    }
-
-    render(){
-        return(
-            &lt;div&gt;
-                &lt;Sub&gt;&lt;/Sub&gt;
-            &lt;/div&gt;
-        );
-    }
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**Sub.js：**</span><br></pre></td></tr></table></figure>
-
-import React from &quot;react&quot;;
-import SubSub from &quot;./SubSub&quot;;
-
-const Sub = (props) =&gt;{
-    return(
-        &lt;div&gt;
-            &lt;SubSub /&gt;
-        &lt;/div&gt;
-    );
-}
-
-export default Sub;
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**SubSub.js：**</span><br></pre></td></tr></table></figure>
-
-import React,{ Component } from &quot;react&quot;;
-import PropTypes from &quot;prop-types&quot;;
-
-export default class SubSub extends Component{
-    // 子组件声明自己需要使用 context
-    static contextTypes = {
-        color:PropTypes.string,
-        callback:PropTypes.func,
-    }
-    render(){
-        const style = { color:this.context.color }
-        const cb = (msg) =&gt; {
-            return () =&gt; {
-                this.context.callback(msg);
-            }
-        }
-        return(
-            &lt;div style = { style }&gt;
-                SUBSUB
-                &lt;button onClick = { cb(&quot;我胡汉三又回来了！&quot;) }&gt;点击我&lt;/button&gt;
-            &lt;/div&gt;
-        );
-    }
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">如果是父组件向子组件单向通信，可以使用变量，如果子组件想向父组件通信，同样可以由父组件提供一个回调函数，供子组件调用，回传参数。</span><br><span class="line"></span><br><span class="line">在使用 context 时，有两点需要注意：</span><br><span class="line"></span><br><span class="line">父组件需要声明自己支持 context，并提供 context 中属性的 PropTypes</span><br><span class="line"></span><br><span class="line">子组件需要声明自己需要使用 context，并提供其需要使用的 context 属性的 PropTypes</span><br><span class="line"></span><br><span class="line">父组件需提供一个 getChildContext 函数，以返回一个初始的 context 对象</span><br><span class="line"></span><br><span class="line">如果组件中使用构造函数（constructor），还需要在构造函数中传入第二个参数 context，并在 super 调用父类构造函数是传入 context，否则会造成组件中无法使用 context。</span><br></pre></td></tr></table></figure>
-
-constructor(props,context){
-super(props,context);
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">**改变 context 对象**</span><br><span class="line">我们不应该也不能直接改变 context 对象中的属性，要想改变 context 对象，只有让其和父组件的 state 或者 props 进行关联，在父组件的 state 或 props 变化时，会自动调用 getChildContext 方法，返回新的 context 对象，而后子组件进行相应的渲染。</span><br><span class="line">修改 App.js，让 context 对象可变：</span><br></pre></td></tr></table></figure>
-
-import React, { Component } from &apos;react&apos;;
-import PropTypes from &quot;prop-types&quot;;
-import Sub from &quot;./Sub&quot;;
-import &quot;./App.css&quot;;
-
-export default class App extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            color:&quot;red&quot;
-        };
-    }
-    // 父组件声明自己支持 context
-    static childContextTypes = {
-        color:PropTypes.string,
-        callback:PropTypes.func,
-    }
-
-    // 父组件提供一个函数，用来返回相应的 context 对象
-    getChildContext(){
-        return{
-            color:this.state.color,
-            callback:this.callback.bind(this)
-        }
-    }
-
-    // 在此回调中修改父组件的 state
-    callback(color){
-        this.setState({
-            color,
-        })
-    }
-
-    render(){
-        return(
-            &lt;div&gt;
-                &lt;Sub&gt;&lt;/Sub&gt;
-            &lt;/div&gt;
-        );
-    }
-} 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">此时，在子组件的 cb 方法中，传入相应的颜色参数，就可以改变 context 对象了，进而影响到子组件：</span><br></pre></td></tr></table></figure>
-
-return(
-    &lt;div style = { style }&gt;
-        SUBSUB
-        &lt;button onClick = { cb(&quot;blue&quot;) }&gt;点击我&lt;/button&gt;
-    &lt;/div&gt;
-);
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">context 同样可以应在无状态组件上，只需将 context 作为第二个参数传入：</span><br></pre></td></tr></table></figure>
-
-import React,{ Component } from &quot;react&quot;;
-import PropTypes from &quot;prop-types&quot;;
-
-const SubSub = (props,context) =&gt; {
-    const style = { color:context.color }
-    const cb = (msg) =&gt; {
-        return () =&gt; {
-            context.callback(msg);
-        }
-    }
-
-    return(
-        &lt;div style = { style }&gt;
-            SUBSUB
-            &lt;button onClick = { cb(&quot;我胡汉三又回来了！&quot;) }&gt;点击我&lt;/button&gt;
-        &lt;/div&gt;
-    );
-}
-
-SubSub.contextTypes = {
-    color:PropTypes.string,
-    callback:PropTypes.func,
-}
-
-export default SubSub;
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1. **非嵌套组件间通信**</span><br><span class="line">非嵌套组件，就是没有任何包含关系的组件，包括兄弟组件以及不在同一个父级中的非兄弟组件。对于非嵌套组件，可以采用下面两种方式：</span><br><span class="line"></span><br><span class="line">    - 利用二者共同父组件的 context 对象进行通信</span><br><span class="line">    - 使用自定义事件的方式</span><br><span class="line"></span><br><span class="line">    如果采用组件间共同的父级来进行中转，会增加子组件和父组件之间的耦合度，如果组件层次较深的话，找到二者公共的父组件不是一件容易的事，当然还是那句话，也不是不可以...</span><br><span class="line">    这里我们采用自定义事件的方式来实现非嵌套组件间的通信。</span><br><span class="line">    我们需要使用一个 events 包：</span><br><span class="line">    `npm install events --save`</span><br><span class="line"></span><br><span class="line">    新建一个 ev.js，引入 events 包，并向外提供一个事件对象，供通信时使用：</span><br></pre></td></tr></table></figure>
-
-import { EventEmitter } from &quot;events&quot;;
-export default new EventEmitter();
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">App.js：</span><br></pre></td></tr></table></figure>
-
-import React, { Component } from &apos;react&apos;;
-
-import Foo from &quot;./Foo&quot;;
-import Boo from &quot;./Boo&quot;;
-
-import &quot;./App.css&quot;;
-
-export default class App extends Component{
-    render(){
-        return(
-            &lt;div&gt;
-                &lt;Foo /&gt;
-                &lt;Boo /&gt;
-            &lt;/div&gt;
-        );
-    }
-} 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Foo.js：</span><br></pre></td></tr></table></figure>
-
-import React,{ Component } from &quot;react&quot;;
-import emitter from &quot;./ev&quot;
-
-export default class Foo extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            msg:null,
-        };
-    }
-    componentDidMount(){
-        // 声明一个自定义事件
-        // 在组件装载完成以后
-        this.eventEmitter = emitter.addListener(&quot;callMe&quot;,(msg)=&gt;{
-            this.setState({
-                msg
-            })
-        });
-    }
-    // 组件销毁前移除事件监听
-    componentWillUnmount(){
-        emitter.removeListener(this.eventEmitter);
-    }
-    render(){
-        return(
-            &lt;div&gt;
-                { this.state.msg }
-                我是非嵌套 1 号
-            &lt;/div&gt;
-        );
-    }
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Boo.js：</span><br></pre></td></tr></table></figure>
-
-import React,{ Component } from &quot;react&quot;;
-import emitter from &quot;./ev&quot;
-
-export default class Boo extends Component{
-    render(){
-        const cb = (msg) =&gt; {
-            return () =&gt; {
-                // 触发自定义事件
-                emitter.emit(&quot;callMe&quot;,&quot;Hello&quot;)
-            }
-        }
-        return(
-            &lt;div&gt;
-                我是非嵌套 2 号
-                &lt;button onClick = { cb(&quot;blue&quot;) }&gt;点击我&lt;/button&gt;
-            &lt;/div&gt;
-        );
-    }
-}
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">    自定义事件是典型的发布/订阅模式，通过向事件对象上添加监听器和触发事件来实现组件间通信。</span><br><span class="line"></span><br><span class="line">**总结**</span><br><span class="line">本文总结了 React 中组件的几种通信方式，分别是：</span><br><span class="line">- 父组件向子组件通信：使用 props</span><br><span class="line">- 子组件向父组件通信：使用 props 回调</span><br><span class="line">- 跨级组件间通信：使用 context 对象</span><br><span class="line">- 非嵌套组件间通信：使用事件订阅</span><br><span class="line"></span><br><span class="line">事实上，在组件间进行通信时，这些通信方式都可以使用，区别只在于使用相应的通信方式的复杂程度和个人喜好，选择最合适的那一个。比如，通过事件订阅模式通信不止可以应用在非嵌套组件间，还可以用于跨级组件间，非嵌套组件间通信也可以使用 context 等。关键是选择最合适的方式。</span><br><span class="line"></span><br><span class="line">当然，自己实现组件间的通信还是太难以管理了，因此出现了很多状态管理工具，如 flux、redux 等，使用这些工具使得组件间的通信更容易追踪和管理。</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">#### 11. React Router及其简单实现原理</span><br><span class="line">&gt;**极简版**</span><br><span class="line"></span><br><span class="line">获取html文件&amp;#35;后面的部分：</span><br></pre></td></tr></table></figure>
-</code></pre><p>window.location.hash<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">添加onhashchange事件，监听路由变化：</span><br></pre></td></tr></table></figure></p>
-<p>window.onhashchange = function(){}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">完整代码：</span><br></pre></td></tr></table></figure></p>
-<p><a href="#/home">home</a><br><a href="#/index">index</a><br><a href="#/other">other</a></p>
-<p><div id="box"></div></p>
-<p><script><br>window.onhashchange = function(){<br>    var hash = window.location.hash.slice(1)<br>    var box = document.getElementById(‘box’)<br>    if(hash==’/home’){<br>        box.innerHTML = “home”<br>    }else if(hash==’/index’){<br>        box.innerHTML = “index”<br>    }else{<br>        box.innerHTML = “default”<br>    }<br>}<br></script><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;**详解版**</span><br><span class="line"></span><br><span class="line">&gt;React Router 是一个基于 React 之上的强大路由库，它可以让你向应用中快速地添加视图和数据流，同时保持页面与 URL 间的同步。本文从两个方便来解析 react-router 实现原理。一：介绍 react-router 的依赖库history；二：使用 history 库，实现一个简单的 react-router 路由。</span><br><span class="line"></span><br><span class="line">**history 介绍**</span><br><span class="line">&gt;history 是一个 JavaScript 库，可让您在 JavaScript 运行的任何地方轻松管理会话历史记录。history 抽象出各种环境中的差异，并提供最小的 API ，使您可以管理历史堆栈，导航，确认导航以及在会话之间保持状态。</span><br><span class="line"></span><br><span class="line">history 有三种实现方式：</span><br><span class="line">1. BrowserHistory：用于支持 HTML5 历史记录 API 的现代 Web 浏览器（请参阅跨浏览器兼容性） </span><br><span class="line">1. HashHistory：用于旧版Web浏览器</span><br><span class="line">1. MemoryHistory：用作参考实现，也可用于非 DOM 环境，如 React Native 或测试</span><br><span class="line"></span><br><span class="line">三种实现方法，都是创建了一个 history 对象，这里主要讲下前面两种：</span><br></pre></td></tr></table></figure></p>
-<p>const history = {<br>    length: globalHistory.length,<br>    action: “POP”,<br>    location: initialLocation,<br>    createHref,<br>    push, // 改变location<br>    replace,<br>    go,<br>    goBack,<br>    goForward,<br>    block,<br>    listen //监听路由变化<br>};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 页面跳转实现</span><br><span class="line">BrowserHistory：pushState、replaceState;</span><br><span class="line">HashHistory：location.hash、location.replace</span><br></pre></td></tr></table></figure></p>
-<p>function push(){<br>    createKey(); // 创建location的key，用于唯一标示该location，是随机生成的<br>    if(BrowserHistory){<br>        globalHistory.pushState({ key, state }, null, href);<br>    }else if(HashHistory){<br>        window.location.hash = path;<br>    }<br>    //上报listener 更新state …<br>}<br>function replace(){<br>    createKey(); // 创建location的key，用于唯一标示该location，是随机生成的<br>    if(BrowserHistory){<br>        globalHistory.replaceState({ key, state }, null, href);<br>    }else if(HashHistory){<br>        window.location.replace(window.location.href.slice(0, hashIndex &gt;= 0 ? hashIndex : 0) + “#” path);<br>    }<br>    //上报listener 更新state …<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 浏览器回退</span><br><span class="line">BrowserHistory：popstate</span><br><span class="line">HashHistory：hashchange</span><br></pre></td></tr></table></figure></p>
-<p>if(BrowserHistory){<br>    window.addEventListener(“popstate”, routerChange);<br>}else if(HashHistory){<br>    window.addEventListener(“hashchange”, routerChange);<br>}<br>function routerChange(){<br>    const location = getDOMLocation(); //获取location<br>    //路由切换<br>    transitionManager.confirmTransitionTo(location,callback=()=&gt;{<br>        //上报listener<br>        transitionManager.notifyListeners();<br>    });<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">通过 history 实现简单 react-router</span><br></pre></td></tr></table></figure></p>
-<p>import { Component } from ‘react’;<br>import createHistory from ‘history/createHashHistory’;<br>const history = createHistory(); //创建 history 对象</p>
-<p>//配置路由表</p>
-<p>const router = {<br> ‘/‘: ‘page/home/index’,<br> ‘/my’: ‘page/my/index’<br>}<br>export default class Router extends Component {<br>    state = { page: null }</p>
-<pre><code>async route(location) {
-    let pathname = location.pathname;
-    let pagePath = router[pathname];
-    // 加 ./的原因 https://webpack.docschina.org/api/module-methods#import-
-    const Page = await import(`./${pagePath}`); //获取路由对应的ui
-    //设置ui
-    this.setState({ 
-        Page: Page.default
-    });
-}
-
-initListener(){
-    //监听路由切换
-    history.listen((location, action) =&gt; {
-        //切换路由后，更新ui
-        this.route(location);
-    });
-}
-
-componentDidMount() {
-    this.route(history.location);
-    this.initListener();
-}
-
-render() {
-    const { Page } = this.state;
-    return Page &amp;&amp; &lt;Page {...this.props} /&gt;;
-}
-</code></pre><p>}<br><code>`</code><br>目前react-router在项目中已有大量实践，其优点可以总结如下:</p>
+<hr>
+<h4 id="8-什么是受控组件？"><a href="#8-什么是受控组件？" class="headerlink" title="8. 什么是受控组件？"></a>8. 什么是受控组件？</h4><p>假设我们现在有一个表单，表单中有一个input标签，input的value值必须是我们设置在constructor构造函数的state中的值，然后，通过onChange触发事件来改变state中保存的value值，这样形成一个循环的回路影响。也可以说是React负责渲染表单的组件仍然控制用户后续输入时所发生的变化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Demo1 extends Component &#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            value: props.value</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    handleChange(e) &#123;</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">            value: e.target.value</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;input value=&#123;this.state.value&#125; onChange=&#123;e =&gt; this.handleChange(e)&#125;/&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="9-高阶组件与装饰器"><a href="#9-高阶组件与装饰器" class="headerlink" title="9. 高阶组件与装饰器"></a>9. 高阶组件与装饰器</h4><blockquote>
+<p>我们都知道高阶函数是什么，高阶组件其实是差不多的用法，只不过传入的参数变成了react组件，并返回一个新的组件。</p>
+</blockquote>
+<p>高阶组件是react应用中很重要的一部分，最大的特点就是重用组件逻辑。它并不是由React API定义出来的功能，而是由React的组合特性衍生出来的一种设计模式。如果你用过redux，那你就一定接触过高阶组件，因为react-redux中的connect就是一个高阶组件。</p>
+<p>先来一个最简单的高阶组件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import simpleHoc from &apos;./simple-hoc&apos;;</span><br><span class="line"></span><br><span class="line">class Usual extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    console.log(this.props, &apos;props&apos;);</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        Usual</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">export default simpleHoc(Usual);</span><br><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">const simpleHoc = WrappedComponent =&gt; &#123;</span><br><span class="line">  console.log(&apos;simpleHoc&apos;);</span><br><span class="line">  return class extends Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">      return &lt;WrappedComponent &#123;```this.props&#125;/&gt;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">export default simpleHoc;</span><br></pre></td></tr></table></figure></p>
+<p>组件Usual通过simpleHoc的包装，打了一个log</p>
+<p>那么形如simpleHoc就是一个高阶组件了，通过接收一个组件class Usual，并返回一个组件class。 其实我们可以看到，在这个函数里，我们可以做很多操作。 而且return的组件同样有自己的生命周期，function，另外，我们看到也可以把props传给WrappedComponent(被包装的组件)</p>
+<p><strong>装饰器</strong><br>高阶组件可以看做是装饰器模式(Decorator Pattern)在React的实现。即允许向一个现有的对象添加新的功能，同时又不改变其结构，属于包装模式(Wrapper Pattern)的一种</p>
+<p>ES7中添加了一个decorator的属性，使用@符表示，可以更精简的书写。那上面的例子就可以改成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import simpleHoc from &apos;./simple-hoc&apos;;</span><br><span class="line"></span><br><span class="line">@simpleHoc</span><br><span class="line">export default class Usual extends Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        Usual</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>是同样的效果。<br>当然兼容性是存在问题的，通常都是通过babel去编译的。 babel提供了plugin，高阶组件用的是类装饰器，所以用transform-decorators-legacy babel</p>
+<hr>
+<h4 id="10-组件通信的多种方式及其之间的区别"><a href="#10-组件通信的多种方式及其之间的区别" class="headerlink" title="10. 组件通信的多种方式及其之间的区别"></a>10. 组件通信的多种方式及其之间的区别</h4><p>在使用 React 的过程中，不可避免的需要组件间进行消息传递（通信），组件间通信大体有下面几种情况：</p>
+<ol>
+<li><p><strong>父组件向子组件通信</strong><br>这是最简单也是最常用的一种通信方式：父组件通过向子组件传递 props，子组件得到 props 后进行相应的处理。<br> <strong>父组件 App.js：</strong></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123; Component &#125; from &quot;react&quot;;</span><br><span class="line">import Sub from &quot;./SubComponent.js&quot;;</span><br><span class="line">import &quot;./App.css&quot;;</span><br><span class="line"></span><br><span class="line">export default class App extends Component&#123;</span><br><span class="line"></span><br><span class="line">    render()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Sub title = &quot;今年过节不收礼&quot; /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> <strong>子组件 SubComponent.js：</strong></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import React from &quot;react&quot;;</span><br><span class="line"></span><br><span class="line">const Sub = (props) =&gt; &#123;</span><br><span class="line">    return(</span><br><span class="line">        &lt;h1&gt;</span><br><span class="line">            &#123; props.title &#125;</span><br><span class="line">        &lt;/h1&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default Sub;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>子组件向父组件通信</strong><br>利用回调函数，可以实现子组件向父组件通信：父组件将一个函数作为 props 传递给子组件，子组件调用该回调函数，便可以向父组件通信。<br> <strong>SubComponent.js：</strong></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import React from &quot;react&quot;;</span><br><span class="line"></span><br><span class="line">const Sub = (props) =&gt; &#123;</span><br><span class="line">    const cb = (msg) =&gt; &#123;</span><br><span class="line">        return () =&gt; &#123;</span><br><span class="line">            props.callback(msg)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return(</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;button onClick = &#123; cb(&quot;我们通信把&quot;) &#125;&gt;点击我&lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default Sub;</span><br></pre></td></tr></table></figure>
+<p> <strong>App.js：</strong></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123; Component &#125; from &quot;react&quot;;</span><br><span class="line">import Sub from &quot;./SubComponent.js&quot;;</span><br><span class="line">import &quot;./App.css&quot;;</span><br><span class="line"></span><br><span class="line">export default class App extends Component&#123;</span><br><span class="line">    callback(msg)&#123;</span><br><span class="line">        console.log(msg);</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Sub callback = &#123; this.callback.bind(this) &#125; /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>跨级组件之间通信</strong><br>所谓跨级组件通信，就是父组件向子组件的子组件通信，向更深层的子组件通信。跨级组件通信可以采用下面两种方式：</p>
+<ul>
+<li>中间组件层层传递 props</li>
+<li><p>使用 context 对象</p>
+<p>对于第一种方式，如果父组件结构较深，那么中间的每一层组件都要去传递 props，增加了复杂度，并且这些  props 并不是这些中间组件自己所需要的。不过这种方式也是可行的，当组件层次在三层以内可以采用这种方式，当组件嵌套过深时，采用这种方式就需要斟酌了。</p>
+<p>使用 context 是另一种可行的方式，context 相当于一个全局变量，是一个大容器，我们可以把要通信的内容放在这个容器中，这样一来，不管嵌套有多深，都可以随意取用。</p>
+<p>使用 context 也很简单，需要满足两个条件：</p>
+</li>
+<li>上级组件要声明自己支持 context，并提供一个函数来返回相应的context 对象</li>
+<li><p>子组件要声明自己需要使用 context</p>
+<p>下面以代码说明，我们新建 3 个文件：父组件 App.js，子组件 Sub.js，子组件的子组件 SubSub.js。<br><strong>App.js：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import PropTypes from &quot;prop-types&quot;;</span><br><span class="line">import Sub from &quot;./Sub&quot;;</span><br><span class="line">import &quot;./App.css&quot;;</span><br><span class="line"></span><br><span class="line">export default class App extends Component&#123;</span><br><span class="line">    // 父组件声明自己支持 context</span><br><span class="line">    static childContextTypes = &#123;</span><br><span class="line">        color:PropTypes.string,</span><br><span class="line">        callback:PropTypes.func,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 父组件提供一个函数，用来返回相应的 context 对象</span><br><span class="line">    getChildContext()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">            color:&quot;red&quot;,</span><br><span class="line">            callback:this.callback.bind(this)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    callback(msg)&#123;</span><br><span class="line">        console.log(msg)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Sub&gt;&lt;/Sub&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Sub.js：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import React from &quot;react&quot;;</span><br><span class="line">import SubSub from &quot;./SubSub&quot;;</span><br><span class="line"></span><br><span class="line">const Sub = (props) =&gt;&#123;</span><br><span class="line">    return(</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;SubSub /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default Sub;</span><br></pre></td></tr></table></figure>
+<p><strong>SubSub.js：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123; Component &#125; from &quot;react&quot;;</span><br><span class="line">import PropTypes from &quot;prop-types&quot;;</span><br><span class="line"></span><br><span class="line">export default class SubSub extends Component&#123;</span><br><span class="line">    // 子组件声明自己需要使用 context</span><br><span class="line">    static contextTypes = &#123;</span><br><span class="line">        color:PropTypes.string,</span><br><span class="line">        callback:PropTypes.func,</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        const style = &#123; color:this.context.color &#125;</span><br><span class="line">        const cb = (msg) =&gt; &#123;</span><br><span class="line">            return () =&gt; &#123;</span><br><span class="line">                this.context.callback(msg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div style = &#123; style &#125;&gt;</span><br><span class="line">                SUBSUB</span><br><span class="line">                &lt;button onClick = &#123; cb(&quot;我胡汉三又回来了！&quot;) &#125;&gt;点击我&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果是父组件向子组件单向通信，可以使用变量，如果子组件想向父组件通信，同样可以由父组件提供一个回调函数，供子组件调用，回传参数。</p>
+<p>在使用 context 时，有两点需要注意：</p>
+<p>父组件需要声明自己支持 context，并提供 context 中属性的 PropTypes</p>
+<p>子组件需要声明自己需要使用 context，并提供其需要使用的 context 属性的 PropTypes</p>
+<p>父组件需提供一个 getChildContext 函数，以返回一个初始的 context 对象</p>
+<p>如果组件中使用构造函数（constructor），还需要在构造函数中传入第二个参数 context，并在 super 调用父类构造函数是传入 context，否则会造成组件中无法使用 context。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">constructor(props,context)&#123;</span><br><span class="line">super(props,context);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>改变 context 对象</strong><br>我们不应该也不能直接改变 context 对象中的属性，要想改变 context 对象，只有让其和父组件的 state 或者 props 进行关联，在父组件的 state 或 props 变化时，会自动调用 getChildContext 方法，返回新的 context 对象，而后子组件进行相应的渲染。<br>修改 App.js，让 context 对象可变：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import PropTypes from &quot;prop-types&quot;;</span><br><span class="line">import Sub from &quot;./Sub&quot;;</span><br><span class="line">import &quot;./App.css&quot;;</span><br><span class="line"></span><br><span class="line">export default class App extends Component&#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            color:&quot;red&quot;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    // 父组件声明自己支持 context</span><br><span class="line">    static childContextTypes = &#123;</span><br><span class="line">        color:PropTypes.string,</span><br><span class="line">        callback:PropTypes.func,</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 父组件提供一个函数，用来返回相应的 context 对象</span><br><span class="line">    getChildContext()&#123;</span><br><span class="line">        return&#123;</span><br><span class="line">            color:this.state.color,</span><br><span class="line">            callback:this.callback.bind(this)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 在此回调中修改父组件的 state</span><br><span class="line">    callback(color)&#123;</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">            color,</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Sub&gt;&lt;/Sub&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时，在子组件的 cb 方法中，传入相应的颜色参数，就可以改变 context 对象了，进而影响到子组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">return(</span><br><span class="line">    &lt;div style = &#123; style &#125;&gt;</span><br><span class="line">        SUBSUB</span><br><span class="line">        &lt;button onClick = &#123; cb(&quot;blue&quot;) &#125;&gt;点击我&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>context 同样可以应在无状态组件上，只需将 context 作为第二个参数传入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123; Component &#125; from &quot;react&quot;;</span><br><span class="line">import PropTypes from &quot;prop-types&quot;;</span><br><span class="line"></span><br><span class="line">const SubSub = (props,context) =&gt; &#123;</span><br><span class="line">    const style = &#123; color:context.color &#125;</span><br><span class="line">    const cb = (msg) =&gt; &#123;</span><br><span class="line">        return () =&gt; &#123;</span><br><span class="line">            context.callback(msg);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return(</span><br><span class="line">        &lt;div style = &#123; style &#125;&gt;</span><br><span class="line">            SUBSUB</span><br><span class="line">            &lt;button onClick = &#123; cb(&quot;我胡汉三又回来了！&quot;) &#125;&gt;点击我&lt;/button&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">SubSub.contextTypes = &#123;</span><br><span class="line">    color:PropTypes.string,</span><br><span class="line">    callback:PropTypes.func,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export default SubSub;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>非嵌套组件间通信</strong><br>非嵌套组件，就是没有任何包含关系的组件，包括兄弟组件以及不在同一个父级中的非兄弟组件。对于非嵌套组件，可以采用下面两种方式：</p>
+<ul>
+<li>利用二者共同父组件的 context 对象进行通信</li>
+<li><p>使用自定义事件的方式</p>
+<p>如果采用组件间共同的父级来进行中转，会增加子组件和父组件之间的耦合度，如果组件层次较深的话，找到二者公共的父组件不是一件容易的事，当然还是那句话，也不是不可以…<br>这里我们采用自定义事件的方式来实现非嵌套组件间的通信。<br>我们需要使用一个 events 包：<br><code>npm install events --save</code></p>
+<p>新建一个 ev.js，引入 events 包，并向外提供一个事件对象，供通信时使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import &#123; EventEmitter &#125; from &quot;events&quot;;</span><br><span class="line">export default new EventEmitter();</span><br></pre></td></tr></table></figure>
+<p>App.js：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line"></span><br><span class="line">import Foo from &quot;./Foo&quot;;</span><br><span class="line">import Boo from &quot;./Boo&quot;;</span><br><span class="line"></span><br><span class="line">import &quot;./App.css&quot;;</span><br><span class="line"></span><br><span class="line">export default class App extends Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;Foo /&gt;</span><br><span class="line">                &lt;Boo /&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Foo.js：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123; Component &#125; from &quot;react&quot;;</span><br><span class="line">import emitter from &quot;./ev&quot;</span><br><span class="line"></span><br><span class="line">export default class Foo extends Component&#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props);</span><br><span class="line">        this.state = &#123;</span><br><span class="line">            msg:null,</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    componentDidMount()&#123;</span><br><span class="line">        // 声明一个自定义事件</span><br><span class="line">        // 在组件装载完成以后</span><br><span class="line">        this.eventEmitter = emitter.addListener(&quot;callMe&quot;,(msg)=&gt;&#123;</span><br><span class="line">            this.setState(&#123;</span><br><span class="line">                msg</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    // 组件销毁前移除事件监听</span><br><span class="line">    componentWillUnmount()&#123;</span><br><span class="line">        emitter.removeListener(this.eventEmitter);</span><br><span class="line">    &#125;</span><br><span class="line">    render()&#123;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &#123; this.state.msg &#125;</span><br><span class="line">                我是非嵌套 1 号</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Boo.js：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import React,&#123; Component &#125; from &quot;react&quot;;</span><br><span class="line">import emitter from &quot;./ev&quot;</span><br><span class="line"></span><br><span class="line">export default class Boo extends Component&#123;</span><br><span class="line">    render()&#123;</span><br><span class="line">        const cb = (msg) =&gt; &#123;</span><br><span class="line">            return () =&gt; &#123;</span><br><span class="line">                // 触发自定义事件</span><br><span class="line">                emitter.emit(&quot;callMe&quot;,&quot;Hello&quot;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return(</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                我是非嵌套 2 号</span><br><span class="line">                &lt;button onClick = &#123; cb(&quot;blue&quot;) &#125;&gt;点击我&lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>自定义事件是典型的发布/订阅模式，通过向事件对象上添加监听器和触发事件来实现组件间通信。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>总结</strong><br>本文总结了 React 中组件的几种通信方式，分别是：</p>
+<ul>
+<li>父组件向子组件通信：使用 props</li>
+<li>子组件向父组件通信：使用 props 回调</li>
+<li>跨级组件间通信：使用 context 对象</li>
+<li>非嵌套组件间通信：使用事件订阅</li>
+</ul>
+<p>事实上，在组件间进行通信时，这些通信方式都可以使用，区别只在于使用相应的通信方式的复杂程度和个人喜好，选择最合适的那一个。比如，通过事件订阅模式通信不止可以应用在非嵌套组件间，还可以用于跨级组件间，非嵌套组件间通信也可以使用 context 等。关键是选择最合适的方式。</p>
+<p>当然，自己实现组件间的通信还是太难以管理了，因此出现了很多状态管理工具，如 flux、redux 等，使用这些工具使得组件间的通信更容易追踪和管理。</p>
+<hr>
+<h4 id="11-React-Router及其简单实现原理"><a href="#11-React-Router及其简单实现原理" class="headerlink" title="11. React Router及其简单实现原理"></a>11. React Router及其简单实现原理</h4><blockquote>
+<p><strong>极简版</strong></p>
+</blockquote>
+<p>获取html文件&#35;后面的部分：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.location.hash</span><br></pre></td></tr></table></figure></p>
+<p>添加onhashchange事件，监听路由变化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">window.onhashchange = function()&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>完整代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;#/home&quot;&gt;home&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;#/index&quot;&gt;index&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;#/other&quot;&gt;other&lt;/a&gt;</span><br><span class="line">&lt;div id=&quot;box&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">window.onhashchange = function()&#123;</span><br><span class="line">    var hash = window.location.hash.slice(1)</span><br><span class="line">    var box = document.getElementById(&apos;box&apos;)</span><br><span class="line">    if(hash==&apos;/home&apos;)&#123;</span><br><span class="line">        box.innerHTML = &quot;home&quot;</span><br><span class="line">    &#125;else if(hash==&apos;/index&apos;)&#123;</span><br><span class="line">        box.innerHTML = &quot;index&quot;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        box.innerHTML = &quot;default&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>详解版</strong></p>
+</blockquote>
+<blockquote>
+<p>React Router 是一个基于 React 之上的强大路由库，它可以让你向应用中快速地添加视图和数据流，同时保持页面与 URL 间的同步。本文从两个方便来解析 react-router 实现原理。一：介绍 react-router 的依赖库history；二：使用 history 库，实现一个简单的 react-router 路由。</p>
+</blockquote>
+<p><strong>history 介绍</strong></p>
+<blockquote>
+<p>history 是一个 JavaScript 库，可让您在 JavaScript 运行的任何地方轻松管理会话历史记录。history 抽象出各种环境中的差异，并提供最小的 API ，使您可以管理历史堆栈，导航，确认导航以及在会话之间保持状态。</p>
+</blockquote>
+<p>history 有三种实现方式：</p>
+<ol>
+<li>BrowserHistory：用于支持 HTML5 历史记录 API 的现代 Web 浏览器（请参阅跨浏览器兼容性） </li>
+<li>HashHistory：用于旧版Web浏览器</li>
+<li>MemoryHistory：用作参考实现，也可用于非 DOM 环境，如 React Native 或测试</li>
+</ol>
+<p>三种实现方法，都是创建了一个 history 对象，这里主要讲下前面两种：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const history = &#123;</span><br><span class="line">    length: globalHistory.length, </span><br><span class="line">    action: &quot;POP&quot;, </span><br><span class="line">    location: initialLocation,</span><br><span class="line">    createHref,</span><br><span class="line">    push, // 改变location</span><br><span class="line">    replace,</span><br><span class="line">    go,</span><br><span class="line">    goBack,</span><br><span class="line">    goForward,</span><br><span class="line">    block,</span><br><span class="line">    listen //监听路由变化</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>页面跳转实现<br>BrowserHistory：pushState、replaceState;<br>HashHistory：location.hash、location.replace</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function push()&#123;</span><br><span class="line">    createKey(); // 创建location的key，用于唯一标示该location，是随机生成的</span><br><span class="line">    if(BrowserHistory)&#123;</span><br><span class="line">        globalHistory.pushState(&#123; key, state &#125;, null, href);</span><br><span class="line">    &#125;else if(HashHistory)&#123;</span><br><span class="line">        window.location.hash = path;</span><br><span class="line">    &#125;</span><br><span class="line">    //上报listener 更新state ...</span><br><span class="line">&#125;</span><br><span class="line">function replace()&#123;</span><br><span class="line">    createKey(); // 创建location的key，用于唯一标示该location，是随机生成的</span><br><span class="line">    if(BrowserHistory)&#123;</span><br><span class="line">        globalHistory.replaceState(&#123; key, state &#125;, null, href); </span><br><span class="line">    &#125;else if(HashHistory)&#123;</span><br><span class="line">        window.location.replace(window.location.href.slice(0, hashIndex &gt;= 0 ? hashIndex : 0) + &quot;#&quot; path);</span><br><span class="line">    &#125; </span><br><span class="line">    //上报listener 更新state ... </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>浏览器回退<br>BrowserHistory：popstate<br>HashHistory：hashchange</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">if(BrowserHistory)&#123;</span><br><span class="line">    window.addEventListener(&quot;popstate&quot;, routerChange);</span><br><span class="line">&#125;else if(HashHistory)&#123;</span><br><span class="line">    window.addEventListener(&quot;hashchange&quot;, routerChange);</span><br><span class="line">&#125;</span><br><span class="line">function routerChange()&#123;</span><br><span class="line">    const location = getDOMLocation(); //获取location</span><br><span class="line">    //路由切换</span><br><span class="line">    transitionManager.confirmTransitionTo(location,callback=()=&gt;&#123;</span><br><span class="line">        //上报listener</span><br><span class="line">        transitionManager.notifyListeners();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>通过 history 实现简单 react-router<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">import &#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import createHistory from &apos;history/createHashHistory&apos;;</span><br><span class="line">const history = createHistory(); //创建 history 对象</span><br><span class="line"></span><br><span class="line">//配置路由表</span><br><span class="line"></span><br><span class="line">const router = &#123;</span><br><span class="line"> &apos;/&apos;: &apos;page/home/index&apos;,</span><br><span class="line"> &apos;/my&apos;: &apos;page/my/index&apos;</span><br><span class="line">&#125;</span><br><span class="line">export default class Router extends Component &#123;</span><br><span class="line">    state = &#123; page: null &#125;</span><br><span class="line">    </span><br><span class="line">    async route(location) &#123;</span><br><span class="line">        let pathname = location.pathname;</span><br><span class="line">        let pagePath = router[pathname];</span><br><span class="line">        // 加 ./的原因 https://webpack.docschina.org/api/module-methods#import-</span><br><span class="line">        const Page = await import(`./$&#123;pagePath&#125;`); //获取路由对应的ui</span><br><span class="line">        //设置ui</span><br><span class="line">        this.setState(&#123; </span><br><span class="line">            Page: Page.default</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    initListener()&#123;</span><br><span class="line">        //监听路由切换</span><br><span class="line">        history.listen((location, action) =&gt; &#123;</span><br><span class="line">            //切换路由后，更新ui</span><br><span class="line">            this.route(location);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        this.route(history.location);</span><br><span class="line">        this.initListener();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    render() &#123;</span><br><span class="line">        const &#123; Page &#125; = this.state;</span><br><span class="line">        return Page &amp;&amp; &lt;Page &#123;...this.props&#125; /&gt;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>目前react-router在项目中已有大量实践，其优点可以总结如下:</p>
 <p>风格: 与React融为一体，专为react量身打造，编码风格与react保持一致，例如路由的配置可以通过component来实现</p>
 <p>简单: 不需要手工维护路由state，使代码变得简单</p>
 <p>强大: 强大的路由管理机制，体现在如下方面</p>
@@ -702,7 +476,7 @@ render() {
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#react经典面试题"><span class="toc-nav-text">react经典面试题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-什么是MVVM？"><span class="toc-nav-text">1. 什么是MVVM？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#什么是MVVM"><span class="toc-nav-text">什么是MVVM</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-React与Vue的区别与联系？"><span class="toc-nav-text">2. React与Vue的区别与联系？</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-什么是JSX语法、Virtual-DOM与DOM-Diff算法？"><span class="toc-nav-text">3. 什么是JSX语法、Virtual DOM与DOM Diff算法？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#JSX语法"><span class="toc-nav-text">JSX语法</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Virtual-DOM"><span class="toc-nav-text">Virtual DOM</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#DOM-Diff算法"><span class="toc-nav-text">DOM Diff算法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-详细介绍生命周期-三个阶段，生命周期的触发顺序"><span class="toc-nav-text">4. 详细介绍生命周期(三个阶段，生命周期的触发顺序)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-合成事件与改变this指向的三种方式及之间的区别？"><span class="toc-nav-text">5. 合成事件与改变this指向的三种方式及之间的区别？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#合成事件"><span class="toc-nav-text">合成事件</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#改变this指向的三种方式及之间的区别"><span class="toc-nav-text">改变this指向的三种方式及之间的区别</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#6-样式绑定与CSS-Modules"><span class="toc-nav-text">6. 样式绑定与CSS Modules</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#7-多种组件创建方式及其区别？"><span class="toc-nav-text">7. 多种组件创建方式及其区别？</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#12-Redux数据流向及三个中间件（redux-logger、redux-thunk、redux-saga）"><span class="toc-nav-text">12. Redux数据流向及三个中间件（redux-logger、redux-thunk、redux-saga）</span></a></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#react经典面试题"><span class="toc-nav-text">react经典面试题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-什么是MVVM？"><span class="toc-nav-text">1. 什么是MVVM？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#什么是MVVM"><span class="toc-nav-text">什么是MVVM</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-React与Vue的区别与联系？"><span class="toc-nav-text">2. React与Vue的区别与联系？</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-什么是JSX语法、Virtual-DOM与DOM-Diff算法？"><span class="toc-nav-text">3. 什么是JSX语法、Virtual DOM与DOM Diff算法？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#JSX语法"><span class="toc-nav-text">JSX语法</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Virtual-DOM"><span class="toc-nav-text">Virtual DOM</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#DOM-Diff算法"><span class="toc-nav-text">DOM Diff算法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-详细介绍生命周期-三个阶段，生命周期的触发顺序"><span class="toc-nav-text">4. 详细介绍生命周期(三个阶段，生命周期的触发顺序)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#5-合成事件与改变this指向的三种方式及之间的区别？"><span class="toc-nav-text">5. 合成事件与改变this指向的三种方式及之间的区别？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#合成事件"><span class="toc-nav-text">合成事件</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#改变this指向的三种方式及之间的区别"><span class="toc-nav-text">改变this指向的三种方式及之间的区别</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#6-样式绑定与CSS-Modules"><span class="toc-nav-text">6. 样式绑定与CSS Modules</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#7-多种组件创建方式及其区别？"><span class="toc-nav-text">7. 多种组件创建方式及其区别？</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#8-什么是受控组件？"><span class="toc-nav-text">8. 什么是受控组件？</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#9-高阶组件与装饰器"><span class="toc-nav-text">9. 高阶组件与装饰器</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#10-组件通信的多种方式及其之间的区别"><span class="toc-nav-text">10. 组件通信的多种方式及其之间的区别</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#11-React-Router及其简单实现原理"><span class="toc-nav-text">11. React Router及其简单实现原理</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#12-Redux数据流向及三个中间件（redux-logger、redux-thunk、redux-saga）"><span class="toc-nav-text">12. Redux数据流向及三个中间件（redux-logger、redux-thunk、redux-saga）</span></a></li></ol></li></ol>
     
   </div>
 </aside>
